@@ -1,0 +1,144 @@
+
+.MuiContainer-root.product-view {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    margin: 150px 0 100px 0;
+  }
+  
+  .product-view .image-wrapper img {
+    width: 100%;
+  }
+  
+  .product-view .text {
+    color: #000;
+  }
+  
+  .product-view .text h2 {
+    color: #000;
+    font-size: 30px;
+  }
+  
+  .product-view .text h3 {color: #000;
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-weight: 300;
+    margin-bottom: 20px;
+  }
+  
+  .MuiContainer-root.product-view .custom-button {
+    color: white;
+    background-color: #1C2331;
+  }
+  
+  .MuiContainer-root.product-view .custom-button:hover {
+    color: white;
+    background-color: #2a344a;
+  }
+  
+  .MuiContainer-root.product-view .custom-button svg {
+    margin-right: 10px;
+  }
+  
+  
+  .product-view .MuiGrid-root .MuiGrid-item {
+    padding: 5px 15px;
+  }
+  
+  @media (min-width: 960px) {
+    .MuiContainer-root.product-view {
+      margin: 40px 0 0;
+    }
+    .MuiGrid-grid-md-5 {
+      flex-grow: 0;
+      max-width: 42%;
+      flex-basis: 50%;
+    }
+  }
+
+  .button {
+    border: none;
+    border-radius: 0.25rem;
+    font-size: 0.75rem;
+    font-weight: bold;
+    padding: 0.75em;
+    display: inline-block;
+    text-decoration: none;
+  }
+  .button:hover {
+    cursor: pointer;
+  }
+  .button:focus {
+    text-decoration: none;
+    outline: none;
+  }
+
+
+  
+  .comment-box {
+    max-width: 40rem;
+    color: #fff;
+    background-color: #909090;
+    border-radius: 3px;
+    padding: 0.2rem 1rem 2rem;
+  }
+  .comment-form {
+    background-color: #fff;
+    border-radius: 0.25rem;
+    margin-bottom: 2rem;
+    padding: 1rem;  
+  }
+  .comment-form-fields {
+    margin-bottom: 0.25rem;
+  }
+  .comment-form-fields input, .comment-form-fields textarea {
+    border: none;
+    border-bottom: 1px solid #404040;
+    font-size: 0.85rem;
+    padding: 0.25rem 0;
+    width: 99%;
+  }
+  .comment-form-fields textarea {
+    font-style: italic;
+  }
+  .comment-form-fields input:hover, .comment-form-fields textarea:hover {
+    border-bottom-color: #00BDFC;
+    outline: none;
+  }
+  
+  .comment-count {
+    color: #404040;
+  }
+  .comment-reveal {
+    float: right;
+    background-color: #00BDFC;
+    color: #fff;
+    border: 3px solid #00BDFC;
+    border-radius: 3px;
+  }
+  .comment {
+    border-top: 0.125rem solid #404040;
+  }
+  .comment-body {
+    font-style: italic;
+    margin-left: 1rem;
+  }
+  .comment-footer {
+    margin-bottom: 1rem;
+  }
+  .comment-footer-delete {
+    padding: 0.2rem 0;
+    color: #404040;
+    text-decoration: none;
+  }
+  .comment-footer-delete :hover{
+    color: #00BDFC;
+    font-weight: bold;
+  }
+  
+  .loader {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }

@@ -1,0 +1,92 @@
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImtpZXV0cmFuZ0BnbWFpbC5jb20iLCJuYmYiOjE2Mjg1NzYyOTIsImV4cCI6MTYzMTE2ODI5MiwiaXNzIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NDQzMDQvIiwiYXVkIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NDQzMDQvIn0.cC6DtmhlNLDf1xascc5rT6RO8uIs3Oc2VvByYFCF8SA
+
+POST https://localhost:5001/api/User/register HTTP/1.1
+Content-type: application/json
+
+{
+    "name": "johndoe",
+    "email": "johndoe@gmail.com",
+    "password": "johndoe123"
+}
+
+POST https://localhost:5001/api/User/login HTTP/1.1
+Content-type: application/json
+
+{
+  "email": "kieutrang@gmail.com",
+  "password": "kieutrang0801"
+}
+
+
+POST https://localhost:5001/api/User/logout HTTP/1.1
+Authorization: Bearer {{token}}
+
+GET https://localhost:5001/api/User/cart HTTP/1.1
+Authorization: Bearer {{token}}
+
+PUT https://localhost:5001/api/User/cart HTTP/1.1
+Content-type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "cart": []
+}
+
+GET https://localhost:5001/api/User/transactions HTTP/1.1
+Authorization: Bearer {{token}}
+
+PUT https://localhost:5001/api/User/transactions HTTP/1.1
+Content-type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "items": [
+    { 
+      "bookId": "string",
+      "title": "string",
+      "price": 0,
+      "quantity": 0
+    }
+  ],
+  "totalPrice": 0,
+  "date": "2021-07-30T09:09:50.421Z",
+  "address": "string",
+  "phone": "string",
+  "status": "string"
+}
+
+GET https://localhost:5001/api/Books HTTP/1.1
+
+GET https://localhost:5001/api/Books/6103b54d346c645a512008f3?bookId=6103b54d346c645a512008f3 HTTP/1.1
+
+GET https://localhost:5001/api/Books/search?text=Java HTTP/1.1
+
+GET https://localhost:5001/api/Books/search/category?category=JavaScript HTTP/1.1
+
+POST https://localhost:5001/api/Books/comment HTTP/1.1
+Content-type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "bookId": "6103b54d346c645a512008f3",
+  "comment": "A great book!!"
+}
+
+PUT https://localhost:5001/api/Books/comment HTTP/1.1
+Content-type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "commentId":"61121a79b74a94f29158e967",
+  "bookId": "6103b54d346c645a512008f3",
+  "updatedComment": "A good book!"
+}
+
+DELETE  https://localhost:5001/api/Books/comment HTTP/1.1
+Content-type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "commentId":"61121a79b74a94f29158e967",
+  "bookId": "6103b54d346c645a512008f3"
+}

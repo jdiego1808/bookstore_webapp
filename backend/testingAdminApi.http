@@ -1,0 +1,78 @@
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluYWNjb3VudEBnbWFpbC5jb20iLCJuYmYiOjE2Mjk3MjgxNDksImV4cCI6MTYzMjMyMDE0OSwiaXNzIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NDQzMDQvIiwiYXVkIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NDQzMDQvIn0.q_aVnG2Fcwx5cIK2QDIydlJV-pdtF5ds39xTZnHWv6Q
+
+POST https://localhost:5001/api/User/login HTTP/1.1
+Content-type: application/json
+
+{
+    "email": "adminaccount@gmail.com",
+    "password": "Admin534346"
+}
+
+GET https://localhost:5001/api/Admin/transactions
+Authorization: Bearer {{token}}
+
+PUT https://localhost:5001/api/Admin/transactions/verify
+Authorization: Bearer {{token}}
+Content-type: application/json
+
+{
+  "email": "john@example.com",
+  "date": "2021-07-29T03:04:59.000+00:00"
+}
+
+GET https://localhost:5001/api/Admin/transactions/in-process
+Authorization: Bearer {{token}}
+
+GET https://localhost:5001/api/Admin/transactions/completed
+Authorization: Bearer {{token}}
+
+GET https://localhost:5001/api/Admin/transactions/analyze
+Authorization: Bearer {{token}}
+
+
+GET https://localhost:5001/api/Admin/books?limit=20&page=1&sort=price&sortDirection=1
+Authorization: Bearer {{token}}
+
+POST https://localhost:5001/api/Admin/books HTTP/1.1
+Authorization: Bearer {{token}}
+Content-type: application/json
+
+{
+  "title": "Node.js Design Patterns",
+  "isbn": "1839214112",
+  "pageCount": 660,
+  "publishedDate": "2020-06-29T16:52:37.176Z",
+  "thumbnailUrl": "https://images-na.ssl-images-amazon.com/images/I/51kpPf4R0gL._SX399_BO1,204,203,200_.jpg",
+  "shortDescription": "Learn proven patterns, techniques, and tricks to take full advantage of the Node.js platform. Master well-known design principles to create applications that are readable, extensible, and that can grow big.",
+  "longDescription": "Node.js Design Patterns is the go-to book for Node.js developers looking to master the most important patterns and best practices to deploy Node.js applications to production with confidence. This edition has been almost entirely rewritten and updated to cover the features of the most recent Node.js LTS version (Node.js 14), and leverages modern best practices and the most recent Node.js features such as EcmaScript Modules (ESM) and async/await.",
+  "status": "PUBLISH",
+  "price": 21.74,
+  "quantity": 20,
+  "authors": [
+    "Luciano Mammino","Mario Casciaro"
+  ],
+  "categories": [
+    "NodeJS", "Design Pattern", "JavaScript"
+  ]
+}
+
+PUT https://localhost:5001/api/Admin/books/60a8a5b6ee37a8c953c95fe2/update-price HTTP/1.1
+Authorization: Bearer {{token}}
+Content-type: application/json
+
+{
+    "bookId": "60a8a5b6ee37a8c953c95fe2",
+    "price": 22.30
+}
+
+PUT https://localhost:5001/api/Admin/books/60a8a5b6ee37a8c953c95fe2/update-quantity HTTP/1.1
+Authorization: Bearer {{token}}
+Content-type: application/json
+
+{
+    "bookId": "60a8a5b6ee37a8c953c95fe2",
+    "quantity": 15
+}
+
+POST https://localhost:5001/api/User/logout HTTP/1.1
+Authorization: Bearer {{token}}

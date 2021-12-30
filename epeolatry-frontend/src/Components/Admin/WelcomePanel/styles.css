@@ -1,0 +1,60 @@
+@import url("https://fonts.googleapis.com/css?family=Merriweather+Sans:300italic");
+
+.padding {
+  padding: 20px 40px;
+}
+
+blockquote {
+  margin: 0;
+  color: #888;
+  font-size: 20px;
+  font-family: "Merriweather Sans", sans-serif;
+  width: 100%;
+  /* max-width: 600px; */
+  position: relative;
+  /* top: 50%;
+  left: 50%; */
+  /* transform: translate(-50%, -50%); */
+}
+blockquote .blockquote-content {
+  width: 100%;
+  display: block;
+  overflow: hidden;
+  border-left: 10px solid #bdcde8;
+  background-color: #fff;
+  position: relative;
+}
+blockquote .blockquote-content:before {
+  width: 250px;
+  height: 250px;
+  display: block;
+  background-color: #bdcde8;
+  content: " ";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+  opacity: 0.3;
+  transform: translate(30%, 30%);
+  background-position: center center;
+  background-size: auto 50%;
+  background-repeat: no-repeat;
+  background-image: url(http://www.michaelmammoliti.com/_projects/blockquotes/_media/icons/blockquotes.png);
+  border-radius: 50%;
+}
+blockquote .blockquote-content p {
+  position: relative;
+  font-style: oblique;
+  z-index: 2;
+}
+
+@media screen and (max-width: 300px) {
+  body {
+    zoom: 0.8;
+  }
+}
+@media screen and (max-height: 300px) {
+  body {
+    zoom: 0.8;
+  }
+}
