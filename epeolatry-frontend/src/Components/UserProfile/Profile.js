@@ -51,7 +51,10 @@ const useStyles = makeStyles((theme) => ({
     items: {
         display: "flex",
         flexDirection: "column"
-    }
+    },
+    root: {
+      marginTop: "80px"
+    },
 }));
 
 const formatter = new Intl.NumberFormat("en-US", {
@@ -78,7 +81,7 @@ export default function App() {
     }, [])
   
     return (
-      <Container maxWidth="md">
+      <Container maxWidth="md" className={classes.root}>
         <Paper className="effect effect-c" elevation={3}>
           <Typography className="effect__heading">“{quote.text}”</Typography>
           <Typography className="effect__subheading">

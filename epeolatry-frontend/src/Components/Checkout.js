@@ -7,7 +7,7 @@ import deliveryIcon from '../assets/delivery.png'
 
 const useStyles = makeStyles({
     root: {
-        marginTop: 20,
+        marginTop: 80,
         justifyContent: 'center',
     },
     loader: {
